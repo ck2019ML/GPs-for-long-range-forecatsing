@@ -23,10 +23,10 @@ opt_sm = -1000;   % the optimizing times
 ## 4. Normalizing data
 The users can normalize the data.
 
-## 5. run benchmark kernels, such as SM, LKP, SLSM
+## 5. Run benchmark kernels, such as SM, LKP, SLSM
 the GP model with LKP has two inference methods: RJ-MCMC and exact inference. 
 
-## 6. randinit is a function performing hyper-parameter initilization, component pruning, model inference, and evaluation. 
+## 6. Performing hyper-parameter initilization, component pruning, model inference, and evaluation in function randinit. 
 
  6a. Find good initialization by fitting Gaussian/Laplace mixture of models on empirical spectral density.
 
