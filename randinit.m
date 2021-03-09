@@ -28,12 +28,11 @@ for j=1:numinit
         other_log_spec = temp_other_log_spec;
         
         % get the initial value of better try
-        hyp_train = hyp_init_try; 
-        hyp_train_start = hyp_init; 
+        hyp_train = hyp_init_try;
+        hyp_train_start = hyp_init;
         nlml = nlml_new;
     end
 end
-
 
 init_w = reshape( hyp_train.cov(       1:1*Q),  1, Q);       % Laplace mixture weights
 init_win = init_w>=1;
@@ -62,7 +61,6 @@ disp('Perhaps the best number of components')
 restQ = sum(init_win);
 covfunc{2} = restQ;
 hyp_train_win.lik = hyp_train_start.lik;
-pause(5)
 
 [hyp_opt, NLML_opt, mPred_tmp, VarPred_tmp] = InfGPmodel(hyp_train_win, covfunc, lik, opt_num, xtrain, ytrain, xtest);
 ytrain = inputdata.y_unorm(ytrain);
@@ -73,21 +71,15 @@ MAE_test = roundn(mae(mPred, ytest), -3)
 MSE_test = roundn(immse(mPred, ytest), -3)
 SMSE_test = MSE_test / var(ytest)
 
-testResults.NLML_opt = NLML_opt;
-testResults.MAE_test = MAE_test;
-testResults.MSE_test = MSE_test;
-testResults.SMSE_test = SMSE_test;
-
-%% if xD<2, plotNSM(inputdata, mPred, sPred, fileName); end
+%% if xD<2, plot
 
 xtrain = inputdata.x_unorm(xtrain);
 xtest = inputdata.x_unorm(xtest);
 
 if  xD==1
     % plot predictions
-    plotNotes(tLabels, xtrain, ytrain, xtest, ytest, mPred, VarPred, fileName);
+    plotNotes(tLabels, xtrain, ytrain, xtest, ytest, mPred, VarPred);
     % plot empirical density
-    plotSpec(restQ, log_s, other_log_spec, hyp_opt.cov, plot_flag, fileName)
-    
+    plotSpec(restQ, log_s, other_log_spec, hyp_opt.cov, lsm_mode)
 end
 end
