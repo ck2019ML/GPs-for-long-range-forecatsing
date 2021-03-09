@@ -1,10 +1,9 @@
 %% 1. global experiment setting
-
-opt_sm = -1000;   % the optimization times for GP
-NormX = 1; NormY = 0;  % normalizing X or Y
+opt_sm = -1000;   % the optimizing times for GP
+NormX = 0; NormY = 0;  % normalizing X or Y
 Q=10;       % initial number of components in spectral kernels
 
-numinit = 3;    % initialization times of each spectral kernel, a large number is preferred
+numinit = 5;    % initialization times of each spectral kernel, a large number is preferred
 sn = 0.5;        % initial signal variance
 csvStr = {'airline.mat', 'monthly-electricity.mat', 'pole_telecom.mat', 'rail-miles.mat'};  % datasets
 
@@ -42,7 +41,7 @@ inputdata.x_unorm = x_unorm;
 inputdata.y_unorm = y_unorm;
 inputdata.yVar_unorm = yVar_unorm;
 
-%% 2. run benchmark kernels, such as SM, LKP, LSM
+%% 2. run benchmark kernels, such as SM, LKP, SLSM
 hypSM.cov = 0;
 hypSM.lik = log(sn);
 
@@ -69,13 +68,6 @@ else
     MAE_test = roundn(mae(mLKP, ytest), -3);
     MSE_test = roundn(immse(mLKP, ytest), -3);
     SMSE_test = MSE_test / var(ytest);
-    MSLL_test = msll(ytrain, ytest, mLKP, VarLKP, lkphyp.lik);
-    
-    testResults.NLML_opt = NLML_LKP;
-    testResults.MAE_test = MAE_test;
-    testResults.MSE_test = MSE_test;
-    testResults.SMSE_test = SMSE_test;
-    testResults.MSLL_test = MSLL_test;
 end
 
 disp('Initialization of ALSM')
