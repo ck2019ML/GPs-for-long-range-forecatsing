@@ -12,12 +12,13 @@ This section always needs to be run once at the start, as it gives access to the
 
 ## 2. Load up data
 
-There are four datasets: airline.mat, rail-miles.mat, monthly-electricity.mat, and pole_telecom.mat. For each dataset, the training inputs and outputs stored in 'xtrain' and 'ytrain', and the withheld testing inputs and outputs stored in 'xtest' and 'ytest'. 
+There are four datasets: airline.mat, rail-miles.mat, monthly-electricity.mat, and pole_telecom.mat. <br>
+For each dataset, the training inputs and outputs stored in 'xtrain' and 'ytrain', and the withheld testing inputs and outputs stored in 'xtest' and 'ytest'. 
 
 ## 3. Global experiment setting for all kernels
-Q = 10; % the number of components
-numinit = 5;    % initialization times
-opt_sm = -1000;   % the optimizing times
+Q = 10; % the number of components  <br>
+numinit = 5;    % initialization times  <br>
+opt_sm = -1000;   % the optimizing times  
 
 ## 4. Normalizing data
 The users can normalize the data.
