@@ -1,4 +1,4 @@
-# GPs-with-long-range-forecatsing
+# GPs for long range forecatsing
 
 ## MATLAB code for long-range-forecatsing using GPs.
 
