@@ -6,7 +6,7 @@ The main file is runLSM.m, which loads data, initialize experiment setting, and 
 
 Below are instructions to use the code. As you go through the script, press ctrl+enter to run the code of the subsection.
 
-## 1. Load up gpml
+## 1. Load up GPML toolbox
 
 This section always needs to be run once at the start, as it gives access to the Gaussian Processes for Machine Learning (GPML) toolbox.
 
