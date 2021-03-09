@@ -27,12 +27,12 @@ the GP model with LKP has two inference methods: RJ-MCMC and exact inference.
 
 ## 6. randinit is a function performing hyper-parameter initilization, component pruning, model inference, and evaluation. 
 
-### 6a. Find good initialization by fitting Gaussian/Laplace mixture of models on empirical spectral density.
+ 6a. Find good initialization by fitting Gaussian/Laplace mixture of models on empirical spectral density.
 
-### 6b. Pruning components with weights smaller than 1.
+ 6b. Pruning components with weights smaller than 1.
 
-### 6c. Infer the GP model on large dataset by using robust BCM. For small dataset, exact inference is preferred.
+ 6c. Infer the GP model on large dataset by using robust BCM. For small dataset, exact inference is preferred.
 
-### 6d. Assess the performance of models using MSE and MAE.
+ 6d. Assess the performance of models using MSE and MAE.
 
-### 6e. Plot the posterior distribution and learned spectral density.
+ 6e. Plot the posterior distribution and learned spectral density.
