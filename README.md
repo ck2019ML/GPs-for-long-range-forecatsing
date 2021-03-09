@@ -2,7 +2,7 @@
 
 ## MATLAB code for long-range-forecatsing using GPs.
 
-The main file is runLSM.m, which loads data, initialize experiment setting, and calls all other functions. 
+The main file is runLSM.m, which loads data, initializes experiment setting, and calls all other functions. 
 
 Below are instructions to use the code. As you go through the script, press ctrl+enter to run the code of the subsection.
 
